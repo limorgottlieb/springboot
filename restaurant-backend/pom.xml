@@ -61,6 +61,11 @@
             <name>Spring Maven MILESTONE Repository</name>
             <url>http://repo.spring.io/libs-milestone</url>
         </repository>
+            <repository>
+                <id>egit</id>
+                <name>Eclipse egit</name>
+                <url>https://repo.eclipse.org/content/repositories/egit-releases/</url>
+            </repository>
     </repositories>
 
     <dependencies>
@@ -74,9 +79,30 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-mongodb</artifactId>
-            <version>2.0.0.M2</version>
+            <artifactId>spring-data-couchbase</artifactId>
+            <version>2.2.4.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.mylyn.github/org.eclipse.egit.github.core -->
+        <dependency>
+            <groupId>org.eclipse.mylyn.github</groupId>
+            <artifactId>org.eclipse.egit.github.core</artifactId>
+            <version>4.8.0.201705170830-rc1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.kohsuke/github-api -->
+        <dependency>
+            <groupId>org.kohsuke</groupId>
+            <artifactId>github-api</artifactId>
+            <version>1.86</version>
+        </dependency>
+
     </dependencies>
 
 

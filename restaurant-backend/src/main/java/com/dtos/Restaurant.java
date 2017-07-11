@@ -1,28 +1,45 @@
-package com.limorg;
+package com.dtos;
+
+import com.couchbase.client.java.repository.annotation.Field;
+import com.couchbase.client.java.repository.annotation.Id;
+import org.springframework.data.couchbase.core.mapping.Document;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 /**
  * Created by gotli01 on 4/3/2017.
  */
+@Document
 public class Restaurant {
-    private long id;
+    @Id
+    private String id;
+    @Field
     private String name;
+    @Field
     private double longitude;
+    @Field
     private double latitude;
+    @Max(value=10, message="Rate is between 1 to 10")
+    @Min(value=1, message="Rate is between 1 to 10")
+    @Field
     private int rate;
 
-    public Restaurant(long id, String name, double longitude, double latitude, int rate) {
+    public Restaurant(){}
+
+    public Restaurant(String id, String name, double longitude, double latitude, int rate) {
         this.id = id;
         this.name = name;
         this.longitude = longitude;
-        this.latitude = latitude;
+            this.latitude = latitude;
         this.rate = rate;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
